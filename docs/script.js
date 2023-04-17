@@ -52,16 +52,18 @@ for (const x of alphabet) {
   letterContainer.appendChild(button);
 }
 
-const guessingWords = ["MikeIstCool", "MikeIstStabil", "MikeIstKing"];
-const hintWords = ["Name + c...", "Name + s.....", "Name + k..."];
+const guessingWords = ["JavaScript", "Basketball", "MikeIstKing"];
+const hintWords = ["Sprache", "Sport", "Träumer"];
 
 const hintEl = document.querySelector(".hint-word");
 const guessEl = document.querySelector(".guess-word");
 const lifes = document.querySelector(".attempts-number");
 const btnNew = document.querySelector(".new-btn");
 const picture = document.querySelector(".hangman-picture");
+const recordEl = document.querySelector(".record");
 
 let index, guessingWord, hiddenWord, life, win, guessedLetters;
+let record = 0;
 
 /* === START-CONDITIONS === */
 
@@ -117,7 +119,9 @@ function updateDisplay() {
       hiddenString += char;
       if (hiddenString.includes(guessingWord)) {
         win = true;
-        picture.src = `./pics/survive-funny.gif`;
+        picture.src = `./pics/gg.gif`;
+        record++;
+        recordEl.textContent = record;
       }
     } else {
       hiddenString += "_";
@@ -127,6 +131,10 @@ function updateDisplay() {
 }
 
 btnNew.addEventListener("click", function () {
+  if (!win) {
+    record = 0;
+    recordEl.textContent = record;
+  }
   start();
 });
 
@@ -134,6 +142,6 @@ btnNew.addEventListener("click", function () {
 function loseGame() {
   // Time-out
   setTimeout(function () {
-    picture.src = `./pics/speed.gif`;
+    picture.src = `./pics/u_mad.gif`;
   }, 1500);
 }
