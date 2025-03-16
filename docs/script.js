@@ -127,7 +127,7 @@ function handleLetterClick(button) {
       life === 0 ? loseGame() : "";
     }
   }
-  lifes.textContent = `Leben ${life}`;
+  lifes.textContent = `Attempts: ${life}`;
 }
 
 // die Funktion, die das Wort mit den geratenen Buchstaben anzeigt
