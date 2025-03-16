@@ -52,8 +52,29 @@ for (const x of alphabet) {
   letterContainer.appendChild(button);
 }
 
-const guessingWords = ["JavaScript", "Basketball", "MikeIstKing"];
-const hintWords = ["Sprache", "Sport", "Träumer"];
+const guessingWords = [
+  "JavaScript", 
+  "Basketball", 
+  "Elephant", 
+  "Sunflower", 
+  "Everest", 
+  "Pizza", 
+  "Einstein", 
+  "Guitar", 
+  "London"
+];
+
+const hintWords = [
+  "Coding language",  // JavaScript
+  "Hoop sport",  // Basketball
+  "Big animal",  // Elephant
+  "Yellow flower",  // Sunflower
+  "Highest mountain",  // Everest
+  "Italian food",  // Pizza
+  "Smart physicist",  // Einstein
+  "String instrument",  // Guitar
+  "UK capital"  // London
+];
 
 const hintEl = document.querySelector(".hint-word");
 const guessEl = document.querySelector(".guess-word");
